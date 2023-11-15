@@ -19,7 +19,7 @@ const (
 	`
 )
 
-// Create a stmt in universities repistory
+// Create a stmt in universities repository
 func createStmt(sql string) *sql.Stmt {
 	return database.InitStmt(sql, "universities")
 }
@@ -29,7 +29,7 @@ var (
 	searchByNameStmt = createStmt(searchByNameSQL)
 )
 
-func SearchByName(name string) ([]models.Univerisity, error) {
+func SearchByName(name string) ([]models.University, error) {
 	r, err := repositories.DoSimpleQuery(searchByNameStmt, name)
 
 	if err != nil {

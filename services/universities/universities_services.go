@@ -8,7 +8,7 @@ import (
 )
 
 // Service to search universities by name
-func SearchByName(name string) ([]models.Univerisity, *core.HttpError) {
+func SearchByName(name string) ([]models.University, *core.HttpError) {
 	name = strings.ToUpper(name)
 
 	unis, err := universitiesrepo.SearchByName("%" + name + "%")

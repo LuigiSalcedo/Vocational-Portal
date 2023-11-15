@@ -1,19 +1,19 @@
 package models
 
-// Univerisity data on database
-type Univerisity struct {
+// University data on database
+type University struct {
 	DefaultData
 }
 
-func CreateUniversity() Univerisity {
-	return Univerisity{}
+func CreateUniversity() University {
+	return University{}
 }
 
-func ExtractUniversity(u Univerisity) []any {
+func ExtractUniversity(u University) []any {
 	return []any{u.Id, u.Name}
 }
 
-func RecoveryUniversity(u *Univerisity, args ...any) {
+func RecoveryUniversity(u *University, args ...any) {
 	u.Id = args[0].(int64)
 	u.Name = args[1].(string)
 }
