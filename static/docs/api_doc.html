@@ -3,6 +3,7 @@
     <head>
         <title>Vocational Portal - API Documentation</title>
         <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+        <link rel="stylesheet" href="/docs/style.css">
     </head>
     <body>
         <h1>Vocational Portal - API Documentation</h1>
@@ -12,5 +13,23 @@
             de agilizar el desarrollo.
         </p>
         <hr />
+        <div>
+            <h3 class="path"></h3>
+            <h4 class="description">Obtener todas las universidades por nombre</h4>
+            <table>
+                <tr>
+                  <th>Ruta</th>
+                  <th>Método</th>
+                  <th>JSON Petición</th>
+                  <th>JSON Respuesta</th>
+                </tr>
+                <tr>
+                  <td>/universidades/nombre/:name</td>
+                  <td>GET</td>
+                  <td>N/A</td>
+                  <td>Lista de {id:int, name:string}</td>
+                </tr>
+            </table>
+        </div>
     </body>
 </html>

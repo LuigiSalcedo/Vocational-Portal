@@ -12,7 +12,7 @@ import (
 var db *sql.DB
 
 func init() {
-	dbData := os.Getenv("vocaportal_db")
+	dbData := os.Getenv("vocaportal_db_data")
 
 	if len(dbData) == 0 {
 		log.Fatal("database data not found")
