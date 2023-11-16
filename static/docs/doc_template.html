@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Vocational Portal - API Documentation</title>
+        <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+        <link rel="stylesheet" href="/docs/style.css">
+    </head>
+    <body>
+        <h1>Vocational Portal - API Documentation</h1>
+        <hr />
+        <p>
+            La documentación de esta API será escrita completamente en español por cuestiones
+            de agilizar el desarrollo.
+        </p>
+        {{ range . }}
+        <hr />
+        <div>
+            <h4 class="description">{{ .Description }}</h4>
+            <table>
+                <tr>
+                  <th>Ruta</th>
+                  <th>Método</th>
+                  <th>JSON Petición</th>
+                  <th>JSON Respuesta</th>
+                </tr>
+                <tr>
+                  <td>{{ .Path }}</td>
+                  <td>{{ .Method }}</td>
+                  <td>{{ .JsonRequest }}</td>
+                  <td>{{ .JsonResponse }}</td>
+                </tr>
+            </table>
+        </div>
+        {{end}}
+    </body>
+</html>
