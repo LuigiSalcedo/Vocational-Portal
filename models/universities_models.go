@@ -13,7 +13,6 @@ func ExtractUniversity(u University) []any {
 	return []any{u.Id, u.Name}
 }
 
-func RecoveryUniversity(u *University, args ...any) {
-	u.Id = args[0].(int64)
-	u.Name = args[1].(string)
+func RecoveryUniversity(u *University, data ...any) {
+	RecoveryData(&u.DefaultData, data...)
 }
