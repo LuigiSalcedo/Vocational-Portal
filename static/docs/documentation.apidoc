@@ -1,0 +1,4 @@
+Ver documentatión de la API|/documentation|GET|N/A|N/A
+Obtener listado de paises por nombre|paises/nombre/:nombre|GET|N/A|lista de {id: int, name: string}
+Obtener listado de universidades por nombre|/universidades/nombre/:name|GET|N/A|lista de {id:int, name:string}
+Obtener una universidad especificada por ID|/universidades/id/:id|GET|N/A|{id: int, name: string}
