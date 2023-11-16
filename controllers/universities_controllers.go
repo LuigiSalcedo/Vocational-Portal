@@ -2,6 +2,7 @@ package controllers
 
 import (
 	"net/http"
+	"strconv"
 	"vocaportal/core"
 	"vocaportal/services/universities"
 
@@ -15,7 +16,7 @@ type universitiesController struct{}
 var Universities = universitiesController{}
 
 // Controllers /universidades/nombre/:name
-func (u universitiesController) SearchByName(c echo.Context) error {
+func (uc universitiesController) SearchByName(c echo.Context) error {
 	name := c.Param("name")
 
 	if len(name) == 0 {
@@ -29,4 +30,23 @@ func (u universitiesController) SearchByName(c echo.Context) error {
 	}
 
 	return c.JSON(http.StatusOK, unis)
+}
+
+// Controllers /universidades/id/:id[0-9]+
+func (uc universitiesController) SerachById(c echo.Context) error {
+	idParam := c.Param("id")
+
+	id, err := strconv.Atoi(idParam)
+
+	if err != nil {
+		return c.JSON(core.PathError.Code, core.PathError)
+	}
+
+	u, httperr := universities.FetchUniversity(int64(id))
+
+	if httperr != nil {
+		return c.JSON(httperr.Code, httperr)
+	}
+
+	return c.JSON(http.StatusOK, u)
 }

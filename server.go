@@ -14,6 +14,7 @@ func main() {
 
 	// Endpoints universidades
 	e.GET("/universidades/nombre/:name", controllers.Universities.SearchByName)
+	e.GET("/universidades/id/:id", controllers.Universities.SerachById)
 
 	// Endpoints de paises
 	e.GET("/paises/nombre/:name", controllers.Countries.SearchByName)

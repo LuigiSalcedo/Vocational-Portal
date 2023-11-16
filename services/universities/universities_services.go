@@ -19,3 +19,18 @@ func SearchByName(name string) ([]models.University, *core.HttpError) {
 
 	return unis, nil
 }
+
+// Services to fetch a university by id
+func FetchUniversity(id int64) (*models.University, *core.HttpError) {
+	u, err := universitiesrepo.FetchUniversity(id)
+
+	if err != nil {
+		return nil, core.InternalError
+	}
+
+	if u == nil {
+		return nil, core.NotFoundError
+	}
+
+	return u, nil
+}
