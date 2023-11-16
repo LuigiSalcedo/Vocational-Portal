@@ -15,5 +15,8 @@ func main() {
 	// Endpoints universidades
 	e.GET("/universidades/nombre/:name", controllers.Universities.SearchByName)
 
+	// Endpoints de paises
+	e.GET("/paises/nombre/:name", controllers.Countries.SearchByName)
+
 	log.Fatal(e.Start(":8088")) // Initializing server
 }
