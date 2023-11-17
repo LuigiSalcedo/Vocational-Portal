@@ -2,6 +2,7 @@ package controllers
 
 import (
 	"net/http"
+	"strconv"
 	"vocaportal/core"
 	"vocaportal/services/countries"
 
@@ -27,5 +28,22 @@ func (cc countriesController) SearchByName(c echo.Context) error {
 	}
 
 	return c.JSON(http.StatusOK, countries)
+}
 
+func (cc countriesController) FetchCountry(c echo.Context) error {
+	idParam := c.Param("id")
+
+	id, err := strconv.Atoi(idParam)
+
+	if err != nil {
+		return c.JSON(core.PathError.Code, core.PathError)
+	}
+
+	country, httperr := countries.FetchCountry(int64(id))
+
+	if httperr != nil {
+		return c.JSON(httperr.Code, httperr)
+	}
+
+	return c.JSON(http.StatusOK, country)
 }
