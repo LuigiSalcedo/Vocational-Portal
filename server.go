@@ -21,6 +21,7 @@ func main() {
 
 	// Endpoints de paises
 	e.GET("/paises/nombre/:name", controllers.Countries.SearchByName)
+	e.GET("/paises/id/:id", controllers.Countries.FetchCountry)
 
 	log.Fatal(e.Start(":8088")) // Initializing server
 }

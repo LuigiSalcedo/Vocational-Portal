@@ -1,6 +1,5 @@
 *.txt
 *_test.go
-*.exe
 *.csv
 *.png
 *.jpg
