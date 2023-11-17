@@ -9,7 +9,7 @@ import (
 )
 
 const (
-	searchByName = `
+	searchByNameSQL = `
 	SELECT
 	ID, 
 	NAME
@@ -17,7 +17,7 @@ const (
 	WHERE NAME LIKE $1
 	`
 
-	fetchCountry = `
+	fetchCountrySQL = `
 	SELECT
 	ID,
 	NAME
@@ -31,8 +31,8 @@ func createStmt(sql string) *sql.Stmt {
 }
 
 var (
-	searchByNameStmt = createStmt(searchByName)
-	fetchCountryStmt = createStmt(fetchCountry)
+	searchByNameStmt = createStmt(searchByNameSQL)
+	fetchCountryStmt = createStmt(fetchCountrySQL)
 )
 
 func SearchByName(name string) ([]models.Country, error) {
@@ -44,7 +44,9 @@ func SearchByName(name string) ([]models.Country, error) {
 	}
 
 	return repositories.RowsToSlice(r,
-		models.CreateCountry, models.ExtractCountry, models.RecoveryCountry)
+		models.CreateCountry,
+		models.ExtractCountry,
+		models.RecoveryCountry)
 }
 
 func FetchCountry(id int64) (*models.Country, error) {

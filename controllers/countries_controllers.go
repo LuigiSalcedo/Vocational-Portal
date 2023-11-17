@@ -9,11 +9,13 @@ import (
 	"github.com/labstack/echo/v4"
 )
 
-// Countries controllers
+// Countries struct controllers
 type countriesController struct{}
 
+// Countries controllers variable
 var Countries = countriesController{}
 
+// Controller: /paises/nombre/:name
 func (cc countriesController) SearchByName(c echo.Context) error {
 	name := c.Param("name")
 
@@ -30,6 +32,7 @@ func (cc countriesController) SearchByName(c echo.Context) error {
 	return c.JSON(http.StatusOK, countries)
 }
 
+// Controller: /paises/id/:id
 func (cc countriesController) FetchCountry(c echo.Context) error {
 	idParam := c.Param("id")
 
