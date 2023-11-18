@@ -5,14 +5,14 @@ type University struct {
 	DefaultData
 }
 
-func CreateUniversity() University {
-	return University{}
+func CreateUniversity() *University {
+	return &University{}
 }
 
-func ExtractUniversity(u University) []any {
+func (u *University) Extract() []any {
 	return []any{u.Id, u.Name}
 }
 
-func RecoveryUniversity(u *University, data ...any) {
-	RecoveryData(&u.DefaultData, data...)
+func (u *University) Recovery(data ...any) {
+	u.DefaultData.Recovery(data...)
 }

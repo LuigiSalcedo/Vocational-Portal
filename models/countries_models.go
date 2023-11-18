@@ -5,14 +5,14 @@ type Country struct {
 	DefaultData
 }
 
-func CreateCountry() Country {
-	return Country{}
+func CreateCountry() *Country {
+	return &Country{}
 }
 
-func ExtractCountry(c Country) []any {
+func (c *Country) Extract() []any {
 	return []any{c.Id, c.Name}
 }
 
-func RecoveryCountry(c *Country, data ...any) {
-	RecoveryData(&c.DefaultData, data...)
+func (c *Country) Recovery(data ...any) {
+	c.DefaultData.Recovery(data...)
 }

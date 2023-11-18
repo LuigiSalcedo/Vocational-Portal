@@ -35,7 +35,7 @@ var (
 	fetchCountryStmt = createStmt(fetchCountrySQL)
 )
 
-func SearchByName(name string) ([]models.Country, error) {
+func SearchByName(name string) ([]*models.Country, error) {
 	r, err := repositories.DoSimpleQuery(searchByNameStmt, name)
 
 	if err != nil {
@@ -43,10 +43,7 @@ func SearchByName(name string) ([]models.Country, error) {
 		return nil, err
 	}
 
-	return repositories.RowsToSlice(r,
-		models.CreateCountry,
-		models.ExtractCountry,
-		models.RecoveryCountry)
+	return repositories.RowsToSlice(r, models.CreateCountry)
 }
 
 func FetchCountry(id int64) (*models.Country, error) {
@@ -57,8 +54,7 @@ func FetchCountry(id int64) (*models.Country, error) {
 		return nil, err
 	}
 
-	return repositories.Data(r,
-		models.CreateCountry,
-		models.ExtractCountry,
-		models.RecoveryCountry)
+	result, err := repositories.Data(r, models.CreateCountry)
+
+	return *result, err
 }
