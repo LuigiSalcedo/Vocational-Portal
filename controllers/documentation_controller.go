@@ -4,6 +4,7 @@ import (
 	"bufio"
 	"bytes"
 	"html/template"
+	"log"
 	"net/http"
 	"os"
 	"strings"
@@ -54,6 +55,12 @@ func (dC docController) APIDoc(c echo.Context) error {
 		core.LogErr(err)
 		return c.String(http.StatusInternalServerError, "Error abriendo la documentación")
 	}
+
+	defer func() {
+		if err := recover(); err != nil {
+			log.Println("Ocurrió un error abriendo la documentación\n.Se cargo hasta:\n", data[len(data)-1])
+		}
+	}()
 
 	sc := bufio.NewScanner(file)
 
