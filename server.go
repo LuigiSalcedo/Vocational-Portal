@@ -30,5 +30,8 @@ func main() {
 	e.GET("/ciudades/id/:id", controllers.Cities.FetchCity)
 	e.GET("/ciudades", controllers.Cities.FetchAll)
 
+	// Endpoints de programas académicos
+	e.GET("/programas/nombre/:name", controllers.Programms.SearchByName)
+
 	log.Fatal(e.Start(":8088")) // Initializing server
 }
