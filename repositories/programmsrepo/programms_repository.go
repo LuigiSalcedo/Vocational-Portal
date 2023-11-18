@@ -14,6 +14,14 @@ const (
 	FROM academic_programmes
 	WHERE NAME LIKE $1
 	`
+
+	fetchProgrammSQL = `
+	SELECT
+	ID,
+	NAME
+	FROM academic_programmes
+	WHERE ID = $1
+	`
 )
 
 // Stmt creator
@@ -21,7 +29,8 @@ var stmtCreator = repositories.NewStmtCreator("academic programmes")
 
 // Stmts
 var (
-	searchByNameStmt = stmtCreator.NewStmt(searchByNameSQL)
+	searchByNameStmt  = stmtCreator.NewStmt(searchByNameSQL)
+	fetchProgrammStmt = stmtCreator.NewStmt(fetchProgrammSQL)
 )
 
 func SearchByName(name string) ([]*models.Programm, error) {
@@ -32,4 +41,20 @@ func SearchByName(name string) ([]*models.Programm, error) {
 	}
 
 	return repositories.RowsToSlice(r, models.CreateProgramm)
+}
+
+func FetchProgramm(id int64) (*models.Programm, error) {
+	r, err := repositories.DoSimpleQuery(fetchProgrammStmt, id)
+
+	if err != nil {
+		return nil, err
+	}
+
+	p, err := repositories.Data(r, models.CreateProgramm)
+
+	if err != nil {
+		return nil, err
+	}
+
+	return *p, nil
 }

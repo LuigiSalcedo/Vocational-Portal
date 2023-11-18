@@ -18,3 +18,18 @@ func SearchByName(name string) ([]*models.Programm, *core.HttpError) {
 
 	return programms, nil
 }
+
+// Service to fecth an academic programm by id
+func FetchProgramm(id int64) (*models.Programm, *core.HttpError) {
+	p, err := programmsrepo.FetchProgramm(id)
+
+	if err != nil {
+		return nil, core.InternalError
+	}
+
+	if p == nil {
+		return nil, core.NotFoundError
+	}
+
+	return p, nil
+}

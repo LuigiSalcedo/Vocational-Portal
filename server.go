@@ -32,6 +32,7 @@ func main() {
 
 	// Endpoints de programas académicos
 	e.GET("/programas/nombre/:name", controllers.Programms.SearchByName)
+	e.GET("/programas/id/:id", controllers.Programms.FetchProgramm)
 
 	log.Fatal(e.Start(":8088")) // Initializing server
 }
