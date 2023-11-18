@@ -3,15 +3,39 @@ package repositories
 import (
 	"database/sql"
 	"vocaportal/core"
+	"vocaportal/database"
 	"vocaportal/models"
 )
+
+// A StmtCreator is a type that create a Stmt for a specific repository
+type stmtCreator struct {
+	repositoryName string
+}
 
 // A creation function is a func that should create a struct register
 type CreationFunction[T models.DatabaseEntity] func() T
 
+// Create a new StmtCreator using the name
+func NewStmtCreator(reponame string) stmtCreator {
+	return stmtCreator{
+		repositoryName: reponame,
+	}
+}
+
+// Create a new stmt
+func (sc stmtCreator) NewStmt(sql string) *sql.Stmt {
+	return database.InitStmt(sql, sc.repositoryName)
+}
+
 // Execute a simple query on the database using a stmt
 func DoSimpleQuery(stmt *sql.Stmt, args ...any) (*sql.Rows, error) {
-	return stmt.Query(args...)
+	r, err := stmt.Query(args...)
+
+	if err != nil {
+		core.LogErr(err)
+	}
+
+	return r, err
 }
 
 // Convert *sql.Rows to a slice

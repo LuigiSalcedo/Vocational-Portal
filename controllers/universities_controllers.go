@@ -15,7 +15,7 @@ type universitiesController struct{}
 // Universities controller variable
 var Universities = universitiesController{}
 
-// Controllers /universidades/nombre/:name
+// Controller: /universidades/nombre/:name
 func (uc universitiesController) SearchByName(c echo.Context) error {
 	name := c.Param("name")
 
@@ -32,7 +32,7 @@ func (uc universitiesController) SearchByName(c echo.Context) error {
 	return c.JSON(http.StatusOK, unis)
 }
 
-// Controllers /universidades/id/:id[0-9]+
+// Controller: /universidades/id/:id[0-9]+
 func (uc universitiesController) FetchUniversity(c echo.Context) error {
 	idParam := c.Param("id")
 
@@ -43,6 +43,20 @@ func (uc universitiesController) FetchUniversity(c echo.Context) error {
 	}
 
 	u, httperr := universities.FetchUniversity(int64(id))
+
+	if httperr != nil {
+		return c.JSON(httperr.Code, httperr)
+	}
+
+	return c.JSON(http.StatusOK, u)
+}
+
+// Controller: /universidades
+func (uc universitiesController) FetchAll(c echo.Context) error {
+	ciudadParam := c.QueryParam("ciudad")
+	paisParam := c.QueryParam("pais")
+
+	u, httperr := universities.FetchAll(ciudadParam, paisParam)
 
 	if httperr != nil {
 		return c.JSON(httperr.Code, httperr)

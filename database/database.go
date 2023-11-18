@@ -1,7 +1,6 @@
 package database
 
 import (
-	"context"
 	"database/sql"
 	"log"
 	"os"
@@ -33,17 +32,6 @@ func DB() *sql.DB {
 
 func Begin() (*sql.Tx, error) {
 	return db.Begin()
-}
-
-func BeginTx(ctx context.Context) (*sql.Tx, error) {
-	return db.BeginTx(ctx, &sql.TxOptions{
-		Isolation: sql.LevelSerializable,
-		ReadOnly:  false,
-	})
-}
-
-func Conn(ctx context.Context) (*sql.Conn, error) {
-	return db.Conn(ctx)
 }
 
 func InitStmt(sql, repository string) *sql.Stmt {

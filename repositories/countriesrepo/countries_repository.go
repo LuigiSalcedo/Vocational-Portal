@@ -1,9 +1,6 @@
 package countriesrepo
 
 import (
-	"database/sql"
-	"vocaportal/core"
-	"vocaportal/database"
 	"vocaportal/models"
 	"vocaportal/repositories"
 )
@@ -26,20 +23,19 @@ const (
 	`
 )
 
-func createStmt(sql string) *sql.Stmt {
-	return database.InitStmt(sql, "countries")
-}
+// Stmt creator
+var stmtCreator = repositories.NewStmtCreator("countries")
 
+// Stmts
 var (
-	searchByNameStmt = createStmt(searchByNameSQL)
-	fetchCountryStmt = createStmt(fetchCountrySQL)
+	searchByNameStmt = stmtCreator.NewStmt(searchByNameSQL)
+	fetchCountryStmt = stmtCreator.NewStmt(fetchCountrySQL)
 )
 
 func SearchByName(name string) ([]*models.Country, error) {
 	r, err := repositories.DoSimpleQuery(searchByNameStmt, name)
 
 	if err != nil {
-		core.LogErr(err)
 		return nil, err
 	}
 
@@ -50,11 +46,14 @@ func FetchCountry(id int64) (*models.Country, error) {
 	r, err := repositories.DoSimpleQuery(fetchCountryStmt, id)
 
 	if err != nil {
-		core.LogErr(err)
 		return nil, err
 	}
 
 	result, err := repositories.Data(r, models.CreateCountry)
+
+	if result == nil {
+		return nil, err
+	}
 
 	return *result, err
 }
