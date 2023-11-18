@@ -1,9 +1,7 @@
 package universitiesrepo
 
 import (
-	"database/sql"
 	"vocaportal/core"
-	"vocaportal/database"
 	"vocaportal/models"
 	"vocaportal/repositories"
 )
@@ -27,15 +25,13 @@ const (
 	`
 )
 
-// Create a stmt in universities repository
-func createStmt(sql string) *sql.Stmt {
-	return database.InitStmt(sql, "universities")
-}
+// Stmt creator
+var stmtCreator = repositories.NewStmtCreator("universities")
 
-// Prepared Statements
+// Stmts
 var (
-	searchByNameStmt    = createStmt(searchByNameSQL)
-	fetchUniversityStmt = createStmt(fetchUniversitySQL)
+	searchByNameStmt    = stmtCreator.NewStmt(searchByNameSQL)
+	fetchUniversityStmt = stmtCreator.NewStmt(fetchUniversitySQL)
 )
 
 // Return list of universities searched by name
@@ -60,6 +56,10 @@ func FetchUniversity(id int64) (*models.University, error) {
 	}
 
 	result, err := repositories.Data(r, models.CreateUniversity)
+
+	if result == nil {
+		return nil, nil
+	}
 
 	return *result, err
 }

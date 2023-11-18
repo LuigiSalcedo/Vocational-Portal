@@ -1,9 +1,7 @@
 package citiesrepo
 
 import (
-	"database/sql"
 	"vocaportal/core"
-	"vocaportal/database"
 	"vocaportal/models"
 	"vocaportal/repositories"
 )
@@ -22,13 +20,11 @@ const (
 )
 
 // Stmt creator
-func createStmt(sql string) *sql.Stmt {
-	return database.InitStmt(sql, "cities")
-}
+var stmtCreator = repositories.NewStmtCreator("cities")
 
 // Statements
 var (
-	searchByNameStmt = createStmt(searchByNameSQL)
+	searchByNameStmt = stmtCreator.NewStmt(searchByNameSQL)
 )
 
 // Get a list of cities using the name
