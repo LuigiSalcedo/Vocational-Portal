@@ -8,7 +8,7 @@ import (
 )
 
 // Services to get cities by name
-func SearchByName(name string) ([]models.City, *core.HttpError) {
+func SearchByName(name string) ([]*models.City, *core.HttpError) {
 	name = strings.ToUpper("%" + name + "%")
 
 	cities, err := citiesrepo.SearchByName(name)

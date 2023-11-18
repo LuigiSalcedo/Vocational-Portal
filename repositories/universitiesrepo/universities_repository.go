@@ -39,7 +39,7 @@ var (
 )
 
 // Return list of universities searched by name
-func SearchByName(name string) ([]models.University, error) {
+func SearchByName(name string) ([]*models.University, error) {
 	r, err := repositories.DoSimpleQuery(searchByNameStmt, name)
 
 	if err != nil {
@@ -47,10 +47,7 @@ func SearchByName(name string) ([]models.University, error) {
 		return nil, err
 	}
 
-	return repositories.RowsToSlice(r,
-		models.CreateUniversity,
-		models.ExtractUniversity,
-		models.RecoveryUniversity)
+	return repositories.RowsToSlice(r, models.CreateUniversity)
 }
 
 // Fetch an university from the database using the ID
@@ -62,8 +59,7 @@ func FetchUniversity(id int64) (*models.University, error) {
 		return nil, err
 	}
 
-	return repositories.Data(r,
-		models.CreateUniversity,
-		models.ExtractUniversity,
-		models.RecoveryUniversity)
+	result, err := repositories.Data(r, models.CreateUniversity)
+
+	return *result, err
 }

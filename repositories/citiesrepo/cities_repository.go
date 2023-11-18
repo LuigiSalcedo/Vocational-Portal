@@ -32,7 +32,7 @@ var (
 )
 
 // Get a list of cities using the name
-func SearchByName(name string) ([]models.City, error) {
+func SearchByName(name string) ([]*models.City, error) {
 	r, err := repositories.DoSimpleQuery(searchByNameStmt, name)
 
 	if err != nil {
@@ -40,8 +40,5 @@ func SearchByName(name string) ([]models.City, error) {
 		return nil, err
 	}
 
-	return repositories.RowsToSlice(r,
-		models.CreateCity,
-		models.ExtractCity,
-		models.RecoveryCity)
+	return repositories.RowsToSlice(r, models.CreateCity)
 }

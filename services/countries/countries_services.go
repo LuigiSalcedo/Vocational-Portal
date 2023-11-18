@@ -8,7 +8,7 @@ import (
 )
 
 // Service func to search countries by name
-func SearchByName(name string) ([]models.Country, *core.HttpError) {
+func SearchByName(name string) ([]*models.Country, *core.HttpError) {
 	name = strings.ToUpper("%" + name + "%")
 
 	countries, err := countriesrepo.SearchByName(name)
