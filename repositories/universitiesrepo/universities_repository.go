@@ -9,18 +9,46 @@ import (
 const (
 	searchByNameSQL = `
 	SELECT
-	ID,
-	NAME
-	FROM UNIVERSITIES
-	WHERE NAME LIKE $1
+	U.ID,
+	U.NAME,
+	City.ID,
+	City.NAME,
+	Country.ID,
+	Country.NAME
+	FROM
+	universities as U 
+	JOIN cities as City ON U.CITY_ID = City.ID
+	JOIN countries as Country ON City.COUNTRY_ID = Country.ID
+	WHERE U.NAME LIKE $1
 	`
 
 	fetchUniversitySQL = `
 	SELECT
-	ID,
-	NAME
-	FROM universities
-	WHERE ID = $1 LIMIT 1
+	U.ID,
+	U.NAME,
+	City.ID,
+	City.NAME,
+	Country.ID,
+	Country.NAME
+	FROM
+	universities as U 
+	JOIN cities as City ON U.CITY_ID = City.ID
+	JOIN countries as Country ON City.COUNTRY_ID = Country.ID
+	WHERE U.ID = $1 LIMIT 1
+	`
+
+	fetchAllSQL = `
+	SELECT
+	U.ID,
+	U.NAME,
+	City.ID,
+	City.NAME,
+	Country.ID,
+	Country.NAME
+	FROM
+	universities as U 
+	JOIN cities as City ON U.CITY_ID = City.ID
+	JOIN countries as Country ON City.COUNTRY_ID = Country.ID
 	`
 )
 
@@ -31,6 +59,7 @@ var stmtCreator = repositories.NewStmtCreator("universities")
 var (
 	searchByNameStmt    = stmtCreator.NewStmt(searchByNameSQL)
 	fetchUniversityStmt = stmtCreator.NewStmt(fetchUniversitySQL)
+	fetchAllStmt        = stmtCreator.NewStmt(fetchAllSQL)
 )
 
 // Return list of universities searched by name
@@ -59,4 +88,15 @@ func FetchUniversity(id int64) (*models.University, error) {
 	}
 
 	return *result, err
+}
+
+// Fetch all universities register
+func FetchAll() ([]*models.University, error) {
+	r, err := repositories.DoSimpleQuery(fetchAllStmt)
+
+	if err != nil {
+		return nil, err
+	}
+
+	return repositories.RowsToSlice(r, models.CreateUniversity)
 }
