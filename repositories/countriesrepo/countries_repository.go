@@ -21,6 +21,13 @@ const (
 	FROM countries
 	WHERE ID = $1 LIMIT 1
 	`
+
+	fetchAllSQL = `
+	SELECT
+	ID,
+	NAME
+	FROM countries
+	`
 )
 
 // Stmt creator
@@ -30,6 +37,7 @@ var stmtCreator = repositories.NewStmtCreator("countries")
 var (
 	searchByNameStmt = stmtCreator.NewStmt(searchByNameSQL)
 	fetchCountryStmt = stmtCreator.NewStmt(fetchCountrySQL)
+	fetchAllStmt     = stmtCreator.NewStmt(fetchAllSQL)
 )
 
 func SearchByName(name string) ([]*models.Country, error) {
@@ -56,4 +64,14 @@ func FetchCountry(id int64) (*models.Country, error) {
 	}
 
 	return *result, err
+}
+
+func FetchAll() ([]*models.Country, error) {
+	r, err := repositories.DoSimpleQuery(fetchAllStmt)
+
+	if err != nil {
+		return nil, err
+	}
+
+	return repositories.RowsToSlice(r, models.CreateCountry)
 }

@@ -26,6 +26,15 @@ const (
 	FROM cities JOIN countries ON cities.COUNTRY_ID = countries.ID
 	WHERE cities.ID = $1	
 	`
+
+	fetchAllSQL = `
+	SELECT
+	CITIES.ID,
+	CITIES.NAME,
+	COUNTRIES.ID,
+	COUNTRIES.NAME
+	FROM cities JOIN countries ON cities.COUNTRY_ID = countries.ID
+	`
 )
 
 // Stmt creator
@@ -35,6 +44,7 @@ var stmtCreator = repositories.NewStmtCreator("cities")
 var (
 	searchByNameStmt = stmtCreator.NewStmt(searchByNameSQL)
 	fetchCityStmt    = stmtCreator.NewStmt(fetchCitySQL)
+	fetchAllStmt     = stmtCreator.NewStmt(fetchAllSQL)
 )
 
 // Get a list of cities using the name
@@ -63,4 +73,15 @@ func FetchCity(id int64) (*models.City, error) {
 	}
 
 	return *city, nil
+}
+
+// Get every city register
+func FetchAll() ([]*models.City, error) {
+	r, err := repositories.DoSimpleQuery(fetchAllStmt)
+
+	if err != nil {
+		return nil, err
+	}
+
+	return repositories.RowsToSlice(r, models.CreateCity)
 }

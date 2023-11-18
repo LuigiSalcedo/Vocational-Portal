@@ -46,3 +46,26 @@ func (cc citiesController) FetchCity(c echo.Context) error {
 
 	return c.JSON(http.StatusOK, city)
 }
+
+// Controller: /ciudades
+func (cc citiesController) FetchAll(c echo.Context) error {
+	countryIdParam := c.QueryParam("pais")
+
+	countryId, err := strconv.Atoi(countryIdParam)
+
+	if err != nil && len(countryIdParam) != 0 {
+		return c.JSON(core.QueryError.Code, core.NewQueryError("pais"))
+	}
+
+	if len(countryIdParam) == 0 {
+		countryId = -1
+	}
+
+	cities, httperr := cities.FetchAll(int64(countryId))
+
+	if httperr != nil {
+		return c.JSON(httperr.Code, httperr)
+	}
+
+	return c.JSON(http.StatusOK, cities)
+}

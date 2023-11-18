@@ -34,3 +34,14 @@ func FetchCountry(id int64) (*models.Country, *core.HttpError) {
 
 	return c, nil
 }
+
+// Services to fetch all countries
+func FetchAll() ([]*models.Country, *core.HttpError) {
+	c, err := countriesrepo.FetchAll()
+
+	if err != nil {
+		return nil, core.InternalError
+	}
+
+	return c, nil
+}

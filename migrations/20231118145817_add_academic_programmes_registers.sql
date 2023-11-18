@@ -1,0 +1,35 @@
+-- +goose Up
+-- +goose StatementBegin
+SELECT 'up SQL query';
+INSERT INTO academic_programmes VALUES
+(1, 'ADMINISTRACION DE EMPRESAS'),
+(2, 'ADMINISTRACION INDUSTRIAL'),
+(3, 'BIOLOGIA'),
+(4, 'COMUNICACION SOCIAL'),
+(5, 'CONTADURIA PUBLICA'),
+(6, 'DERECHO'),
+(7, 'ECONOMIA'),
+(8, 'ENFERMERIA'),
+(9, 'FILOSOFIA'),
+(10, 'HISTORIA'),
+(11, 'INGENIERIA CIVIL'),
+(12, 'INGENIERIA DE SISTEMAS'),
+(13, 'INGENIERIA QUIMICA'),
+(14, 'INGENIERIA DE ALIMENTOS'),
+(15, 'CIENCIAS SOCIALES'),
+(16, 'EDUCACION INFANTIL'),
+(17, 'LITERATURA'),
+(18, 'MATEMATICAS'),
+(19, 'ODONTOLOGIA'),
+(20, 'IDIOMAS'),
+(21, 'QUIMICA'),
+(22, 'QUIMICA FARMACEUTICA'),
+(23, 'TRABAJO SOCIAL');
+
+-- +goose StatementEnd
+
+-- +goose Down
+-- +goose StatementBegin
+SELECT 'down SQL query';
+DELETE FROM academica_programmes WHERE ID >= 1 && ID <= 23;
+-- +goose StatementEnd

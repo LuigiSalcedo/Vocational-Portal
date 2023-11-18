@@ -23,10 +23,17 @@ func main() {
 	// Endpoints de paises
 	e.GET("/paises/nombre/:name", controllers.Countries.SearchByName)
 	e.GET("/paises/id/:id", controllers.Countries.FetchCountry)
+	e.GET("/paises", controllers.Countries.FetchAll)
 
 	// Endpoints de ciudades
 	e.GET("/ciudades/nombre/:name", controllers.Cities.SearchByName)
 	e.GET("/ciudades/id/:id", controllers.Cities.FetchCity)
+	e.GET("/ciudades", controllers.Cities.FetchAll)
+
+	// Endpoints de programas académicos
+	e.GET("/programas/nombre/:name", controllers.Programms.SearchByName)
+	e.GET("/programas/id/:id", controllers.Programms.FetchProgramm)
+	e.GET("/programas", controllers.Programms.FetchAll)
 
 	log.Fatal(e.Start(":8088")) // Initializing server
 }

@@ -50,3 +50,14 @@ func (cc countriesController) FetchCountry(c echo.Context) error {
 
 	return c.JSON(http.StatusOK, country)
 }
+
+// Controller: /paises
+func (cc countriesController) FetchAll(c echo.Context) error {
+	countries, httperr := countries.FetchAll()
+
+	if httperr != nil {
+		return c.JSON(httperr.Code, httperr)
+	}
+
+	return c.JSON(http.StatusOK, countries)
+}
