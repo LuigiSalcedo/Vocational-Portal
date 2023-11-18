@@ -1,7 +1,6 @@
 package citiesrepo
 
 import (
-	"vocaportal/core"
 	"vocaportal/models"
 	"vocaportal/repositories"
 )
@@ -43,7 +42,6 @@ func SearchByName(name string) ([]*models.City, error) {
 	r, err := repositories.DoSimpleQuery(searchByNameStmt, name)
 
 	if err != nil {
-		core.LogErr(err)
 		return nil, err
 	}
 
@@ -55,7 +53,6 @@ func FetchCity(id int64) (*models.City, error) {
 	r, err := repositories.DoSimpleQuery(fetchCityStmt, id)
 
 	if err != nil {
-		core.LogErr(err)
 		return nil, err
 	}
 

@@ -1,7 +1,6 @@
 package universitiesrepo
 
 import (
-	"vocaportal/core"
 	"vocaportal/models"
 	"vocaportal/repositories"
 )
@@ -39,7 +38,6 @@ func SearchByName(name string) ([]*models.University, error) {
 	r, err := repositories.DoSimpleQuery(searchByNameStmt, name)
 
 	if err != nil {
-		core.LogErr(err)
 		return nil, err
 	}
 
@@ -51,7 +49,6 @@ func FetchUniversity(id int64) (*models.University, error) {
 	r, err := repositories.DoSimpleQuery(fetchUniversityStmt, id)
 
 	if err != nil {
-		core.LogErr(err)
 		return nil, err
 	}
 

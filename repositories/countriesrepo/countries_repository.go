@@ -1,7 +1,6 @@
 package countriesrepo
 
 import (
-	"vocaportal/core"
 	"vocaportal/models"
 	"vocaportal/repositories"
 )
@@ -37,7 +36,6 @@ func SearchByName(name string) ([]*models.Country, error) {
 	r, err := repositories.DoSimpleQuery(searchByNameStmt, name)
 
 	if err != nil {
-		core.LogErr(err)
 		return nil, err
 	}
 
@@ -48,7 +46,6 @@ func FetchCountry(id int64) (*models.Country, error) {
 	r, err := repositories.DoSimpleQuery(fetchCountryStmt, id)
 
 	if err != nil {
-		core.LogErr(err)
 		return nil, err
 	}
 

@@ -29,7 +29,13 @@ func (sc stmtCreator) NewStmt(sql string) *sql.Stmt {
 
 // Execute a simple query on the database using a stmt
 func DoSimpleQuery(stmt *sql.Stmt, args ...any) (*sql.Rows, error) {
-	return stmt.Query(args...)
+	r, err := stmt.Query(args...)
+
+	if err != nil {
+		core.LogErr(err)
+	}
+
+	return r, err
 }
 
 // Convert *sql.Rows to a slice
