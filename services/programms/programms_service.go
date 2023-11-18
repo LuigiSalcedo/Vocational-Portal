@@ -33,3 +33,14 @@ func FetchProgramm(id int64) (*models.Programm, *core.HttpError) {
 
 	return p, nil
 }
+
+// Service to fetch every academic programm register
+func FetchAll() ([]*models.Programm, *core.HttpError) {
+	p, err := programmsrepo.FetchAll()
+
+	if err != nil {
+		return nil, core.InternalError
+	}
+
+	return p, nil
+}

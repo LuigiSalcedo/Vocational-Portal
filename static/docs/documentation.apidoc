@@ -8,5 +8,6 @@ Obtener un país especificado por ID|/paises/id/:id|GET|N/A|{id: int, name:strin
 Obtener todas las ciudades con parametros|/ciudades[?pais=int]|GET|N/A|lista de {id: int, name:string, pais: {id: int, name:string}}
 Obtener un listado de ciudades por nombre|/ciudades/nombre/:name|GET|N/A|lista de {id: int, name:string, pais: {id: int, name:string}}
 Obtener una ciudad especificada por id|/ciudades/id/:id|GET|N/A|{id: int, name:string, pais: {id: int, name:string}}
+Obtener todos los programas académicos|/programas|GET|N/A|lista de {id: int, nombre: string}
 Obtener listado de programas académicos por nombre|/programas/nombre/:nombre|GET|N/A|lista de {id: int, nombre: string}
 Obtener un programa académico por id|/programas/id/:id|GET|N/A|{id: int, nombre: string}

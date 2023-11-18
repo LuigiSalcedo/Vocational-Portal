@@ -22,6 +22,13 @@ const (
 	FROM academic_programmes
 	WHERE ID = $1
 	`
+
+	fetchAllSQL = `
+	SELECT
+	ID,
+	NAME
+	FROM academic_programmes
+	`
 )
 
 // Stmt creator
@@ -31,6 +38,7 @@ var stmtCreator = repositories.NewStmtCreator("academic programmes")
 var (
 	searchByNameStmt  = stmtCreator.NewStmt(searchByNameSQL)
 	fetchProgrammStmt = stmtCreator.NewStmt(fetchProgrammSQL)
+	fetchAllStmt      = stmtCreator.NewStmt(fetchAllSQL)
 )
 
 func SearchByName(name string) ([]*models.Programm, error) {
@@ -57,4 +65,14 @@ func FetchProgramm(id int64) (*models.Programm, error) {
 	}
 
 	return *p, nil
+}
+
+func FetchAll() ([]*models.Programm, error) {
+	r, err := repositories.DoSimpleQuery(fetchAllStmt)
+
+	if err != nil {
+		return nil, err
+	}
+
+	return repositories.RowsToSlice(r, models.CreateProgramm)
 }

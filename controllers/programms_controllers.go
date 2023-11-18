@@ -15,7 +15,7 @@ type programmsController struct{}
 // Academic programms varible
 var Programms = programmsController{}
 
-// Search by name
+// Controller: /programas/nombre/:nombre
 func (pc programmsController) SearchByName(c echo.Context) error {
 	name := c.Param("name")
 
@@ -28,7 +28,7 @@ func (pc programmsController) SearchByName(c echo.Context) error {
 	return c.JSON(http.StatusOK, programms)
 }
 
-// Fetch by id
+// Controller: /programas/id/:id
 func (pc programmsController) FetchProgramm(c echo.Context) error {
 	idParam := c.Param("id")
 
@@ -39,6 +39,17 @@ func (pc programmsController) FetchProgramm(c echo.Context) error {
 	}
 
 	p, httperr := programms.FetchProgramm(int64(id))
+
+	if httperr != nil {
+		return c.JSON(httperr.Code, httperr)
+	}
+
+	return c.JSON(http.StatusOK, p)
+}
+
+// Controller: /programas
+func (pc programmsController) FetchAll(c echo.Context) error {
+	p, httperr := programms.FetchAll()
 
 	if httperr != nil {
 		return c.JSON(httperr.Code, httperr)
