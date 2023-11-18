@@ -33,7 +33,7 @@ func (uc universitiesController) SearchByName(c echo.Context) error {
 }
 
 // Controllers /universidades/id/:id[0-9]+
-func (uc universitiesController) SerachById(c echo.Context) error {
+func (uc universitiesController) FetchUniversity(c echo.Context) error {
 	idParam := c.Param("id")
 
 	id, err := strconv.Atoi(idParam)
