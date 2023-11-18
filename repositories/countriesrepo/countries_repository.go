@@ -55,7 +55,7 @@ func FetchCountry(id int64) (*models.Country, error) {
 	result, err := repositories.Data(r, models.CreateCountry)
 
 	if result == nil {
-		return nil, nil
+		return nil, err
 	}
 
 	return *result, err

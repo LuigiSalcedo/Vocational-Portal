@@ -25,6 +25,7 @@ func main() {
 
 	// Endpoints de ciudades
 	e.GET("/ciudades/nombre/:name", controllers.Cities.SearchByName)
+	e.GET("/ciudades/id/:id", controllers.Cities.FetchCity)
 
 	log.Fatal(e.Start(":8088")) // Initializing server
 }

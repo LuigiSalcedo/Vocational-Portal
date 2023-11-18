@@ -58,7 +58,7 @@ func FetchUniversity(id int64) (*models.University, error) {
 	result, err := repositories.Data(r, models.CreateUniversity)
 
 	if result == nil {
-		return nil, nil
+		return nil, err
 	}
 
 	return *result, err
