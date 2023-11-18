@@ -5,6 +5,7 @@ import (
 	"vocaportal/core"
 	"vocaportal/models"
 	"vocaportal/repositories/citiesrepo"
+	"vocaportal/services"
 )
 
 // Service to get cities by name
@@ -33,4 +34,21 @@ func FetchCity(id int64) (*models.City, *core.HttpError) {
 	}
 
 	return city, nil
+}
+
+// Services to get all cities
+func FetchAll(countryId int64) ([]*models.City, *core.HttpError) {
+	cities, err := citiesrepo.FetchAll()
+
+	if err != nil {
+		return nil, core.InternalError
+	}
+
+	if countryId != -1 {
+		filter := services.NewSimpleFilter(func(c *models.City) any { return c.Country.Id }, countryId)
+		citiesFiltered := services.FilterData(cities, filter)
+		cities = citiesFiltered
+	}
+
+	return cities, nil
 }
