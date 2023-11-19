@@ -11,3 +11,5 @@ Obtener una ciudad especificada por id|/ciudades/id/:id|GET|N/A|{id: int, name:s
 Obtener todos los programas académicos|/programas|GET|N/A|lista de {id: int, nombre: string}
 Obtener listado de programas académicos por nombre|/programas/nombre/:nombre|GET|N/A|lista de {id: int, nombre: string}
 Obtener un programa académico por id|/programas/id/:id|GET|N/A|{id: int, nombre: string}
+Obtener todas las ofertas académicas|/ofertas[?[programa=int]&[universidad=int]&[ciudad=int]&[pais=int]]|GET|N/A|lista de {id:int, nombre:string, + información programa académico + información de universidad}
+Obtner listado de ofertas por nombre|/ofertas/nombre/:nombre|GET|N/A|lista de {id:int, nombre:string, + información programa académico + información de universidad}

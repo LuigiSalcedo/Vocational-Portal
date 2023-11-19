@@ -18,6 +18,8 @@ func SearchByName(name string) ([]*models.City, *core.HttpError) {
 		return nil, core.InternalError
 	}
 
+	services.SortWithPrefix(cities, strings.Trim(name, "%"))
+
 	return cities, nil
 }
 

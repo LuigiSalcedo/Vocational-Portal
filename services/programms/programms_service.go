@@ -5,6 +5,7 @@ import (
 	"vocaportal/core"
 	"vocaportal/models"
 	"vocaportal/repositories/programmsrepo"
+	"vocaportal/services"
 )
 
 // Service to search academics programms by name
@@ -15,6 +16,8 @@ func SearchByName(name string) ([]*models.Programm, *core.HttpError) {
 	if err != nil {
 		return nil, core.InternalError
 	}
+
+	services.SortWithPrefix(programms, strings.Trim(name, "%"))
 
 	return programms, nil
 }
