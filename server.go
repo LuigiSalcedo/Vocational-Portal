@@ -35,5 +35,8 @@ func main() {
 	e.GET("/programas/id/:id", controllers.Programms.FetchProgramm)
 	e.GET("/programas", controllers.Programms.FetchAll)
 
+	// Endpoint de ofertas
+	e.GET("/ofertas", controllers.Offers.FetchAll)
+
 	log.Fatal(e.Start(":8088")) // Initializing server
 }
