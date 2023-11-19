@@ -1,5 +1,11 @@
 package services
 
+import (
+	"slices"
+	"strings"
+	"vocaportal/models"
+)
+
 // Filter is a func that the register should pass to be returned usually
 // the filter is a comparation with a query param
 type Filter[T any] func(v *T) bool
@@ -31,4 +37,18 @@ func passFilters[T any](v *T, filters ...Filter[T]) bool {
 		}
 	}
 	return true
+}
+
+// Sort a slice using the position of the prefix given
+func SortWithPrefix[T models.Sortable](slice []T, prefix string) {
+	slices.SortFunc(slice, func(v1, v2 T) int {
+		p1 := strings.Index(v1.ByName(), prefix)
+		p2 := strings.Index(v2.ByName(), prefix)
+
+		if p1 != p2 {
+			return p1 - p2
+		}
+
+		return strings.Compare(v1.ByName(), v2.ByName())
+	})
 }

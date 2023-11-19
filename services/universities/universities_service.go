@@ -19,6 +19,8 @@ func SearchByName(name string) ([]*models.University, *core.HttpError) {
 		return nil, core.InternalError
 	}
 
+	services.SortWithPrefix(unis, name)
+
 	return unis, nil
 }
 

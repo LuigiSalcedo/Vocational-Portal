@@ -5,6 +5,7 @@ import (
 	"vocaportal/core"
 	"vocaportal/models"
 	"vocaportal/repositories/countriesrepo"
+	"vocaportal/services"
 )
 
 // Service func to search countries by name
@@ -16,6 +17,8 @@ func SearchByName(name string) ([]*models.Country, *core.HttpError) {
 	if err != nil {
 		return nil, core.InternalError
 	}
+
+	services.SortWithPrefix(countries, strings.Trim(name, "%"))
 
 	return countries, nil
 }
