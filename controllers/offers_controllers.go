@@ -29,3 +29,16 @@ func (oc offersController) FetchAll(c echo.Context) error {
 
 	return c.JSON(http.StatusOK, offers)
 }
+
+// Controller: /ofertas/nombre/:name
+func (oc offersController) SearchByName(c echo.Context) error {
+	name := c.Param("name")
+
+	offers, httperr := offers.SearchByName(name)
+
+	if httperr != nil {
+		return c.JSON(httperr.Code, httperr)
+	}
+
+	return c.JSON(http.StatusOK, offers)
+}

@@ -1,6 +1,7 @@
 package offers
 
 import (
+	"strings"
 	"vocaportal/core"
 	"vocaportal/models"
 	"vocaportal/repositories/offersrepo"
@@ -31,4 +32,19 @@ func FetchAll(paramValues []int64) ([]*models.Offer, *core.HttpError) {
 
 	// Filtrar información
 	return services.FilterData(offers, filters...), nil
+}
+
+// Service to search offers by name
+func SearchByName(name string) ([]*models.Offer, *core.HttpError) {
+	name = strings.ToUpper(name)
+
+	offers, err := offersrepo.SearchByName("%" + name + "%")
+
+	if err != nil {
+		return nil, core.InternalError
+	}
+
+	services.SortWithPrefix(offers, name)
+
+	return offers, nil
 }
