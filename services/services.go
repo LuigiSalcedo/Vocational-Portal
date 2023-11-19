@@ -52,3 +52,14 @@ func SortWithPrefix[T models.Sortable](slice []T, prefix string) {
 		return strings.Compare(v1.ByName(), v2.ByName())
 	})
 }
+
+// This function create a new SimpleFilter and add it to a filter slice
+func CreateAndAddFilter[T any](filters []Filter[T], ef func(v *T) any, cmpValue int64) []Filter[T] {
+	if cmpValue != -1 {
+		filters = append(filters, NewSimpleFilter(func(v *T) any {
+			return ef(v)
+		}, cmpValue))
+	}
+
+	return filters
+}
