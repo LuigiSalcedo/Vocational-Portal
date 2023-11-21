@@ -39,5 +39,8 @@ func main() {
 	e.GET("/ofertas", controllers.Offers.FetchAll)
 	e.GET("/ofertas/nombre/:name", controllers.Offers.SearchByName)
 
+	// Endpoint de areas de estudio
+	e.GET("/areas", controllers.Areas.FetchAll)
+
 	log.Fatal(e.Start(":8088")) // Initializing server
 }
