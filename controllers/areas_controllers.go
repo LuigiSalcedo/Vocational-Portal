@@ -23,3 +23,16 @@ func (ac areasController) FetchAll(c echo.Context) error {
 
 	return c.JSON(http.StatusOK, areas)
 }
+
+// Controllers: /areas/nombre/:name
+func (ac areasController) SearchByName(c echo.Context) error {
+	name := c.Param("name")
+
+	areas, httperr := areas.SearchByName(name)
+
+	if httperr != nil {
+		return c.JSON(httperr.Code, httperr)
+	}
+
+	return c.JSON(http.StatusOK, areas)
+}

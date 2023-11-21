@@ -41,6 +41,7 @@ func main() {
 
 	// Endpoint de areas de estudio
 	e.GET("/areas", controllers.Areas.FetchAll)
+	e.GET("/areas/nombre/:name", controllers.Areas.SearchByName)
 
 	log.Fatal(e.Start(":8088")) // Initializing server
 }

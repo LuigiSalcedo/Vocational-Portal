@@ -14,3 +14,4 @@ Obtener un programa académico por id|/programas/id/:id|GET|N/A|{id: int, nombre
 Obtener todas las ofertas académicas|/ofertas[?[programa=int]&[universidad=int]&[ciudad=int]&[pais=int]]|GET|N/A|lista de {id:int, nombre:string, + información programa académico + información de universidad}
 Obtener listado de ofertas por nombre|/ofertas/nombre/:nombre|GET|N/A|lista de {id:int, nombre:string, + información programa académico + información de universidad}
 Obtener todas las areas de estudio|/areas|GET|N/A|lista de {id: int, nombre: string}
+Obtener un listado de areas de estudio por nombre|/areas/nombre/:nombre|GET|N/A|lista de {id: int, nombre: string}
