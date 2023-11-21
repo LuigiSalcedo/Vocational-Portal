@@ -34,10 +34,15 @@ func main() {
 	e.GET("/programas/nombre/:name", controllers.Programms.SearchByName)
 	e.GET("/programas/id/:id", controllers.Programms.FetchProgramm)
 	e.GET("/programas", controllers.Programms.FetchAll)
+	e.POST("/programas/areas", controllers.Programms.SearchByAreaRelation)
 
 	// Endpoint de ofertas
 	e.GET("/ofertas", controllers.Offers.FetchAll)
 	e.GET("/ofertas/nombre/:name", controllers.Offers.SearchByName)
+
+	// Endpoint de areas de estudio
+	e.GET("/areas", controllers.Areas.FetchAll)
+	e.GET("/areas/nombre/:name", controllers.Areas.SearchByName)
 
 	log.Fatal(e.Start(":8088")) // Initializing server
 }
