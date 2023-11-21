@@ -8,7 +8,7 @@ To run vocaportal-server you have to get the next requeriments:
 ### Preparing database
 Once installed go and PostgreSQL you have to create a database. In this example It will named **"vocadb"**.
 Now You have to install [goose](http://pressly.github.io/goose/) to manage the database migrations.
-You can install It writing the next command on you command line console (CLC):
+You can install It writing the next command on your command line console (CLC):
 ```
 go install github.com/pressly/goose/v3/cmd/goose@lastest
 ```
@@ -22,10 +22,10 @@ With the EV saved open your CLC and go to the project root folder (where go.mod 
 ```
 goose -dir migrations postgres %vocaportal_db_data% up
 ```
-The database sholud be updated.
+The database should be updated.
 ### Running
-The program is compiled on Windows 64 bits. If You are on a Windows 64 bits You can run it the .exe file. If You are on a different
-operative systema You can execute It with the next command:
+The program is compiled on Windows 64 bits. If You are on a Windows 64 bits You can execute server.exe file. If You are on a different
+operative system You can execute It with the next command:
 ```
 go run server.go
 ```
