@@ -41,7 +41,7 @@ func passFilters[T any](v *T, filters ...Filter[T]) bool {
 
 // Sort a slice using the position of the prefix given
 func SortWithPrefix[T models.Sortable](slice []T, prefix string) {
-	slices.SortFunc(slice, func(v1, v2 T) int {
+	SortSlice(slice, func(v1, v2 T) int {
 		p1 := strings.Index(v1.ByName(), prefix)
 		p2 := strings.Index(v2.ByName(), prefix)
 
@@ -51,6 +51,11 @@ func SortWithPrefix[T models.Sortable](slice []T, prefix string) {
 
 		return strings.Compare(v1.ByName(), v2.ByName())
 	})
+}
+
+// Sort a slice using a given sort func
+func SortSlice[T any](slc []T, cmpFunc func(v1, v2 T) int) {
+	slices.SortFunc(slc, cmpFunc)
 }
 
 // This function create a new SimpleFilter and add it to a filter slice

@@ -1,6 +1,7 @@
 package controllers
 
 import (
+	"encoding/json"
 	"net/http"
 	"strconv"
 	"vocaportal/core"
@@ -56,4 +57,29 @@ func (pc programmsController) FetchAll(c echo.Context) error {
 	}
 
 	return c.JSON(http.StatusOK, p)
+}
+
+// Controller: /programas/areas
+func (pc programmsController) SearchByAreaRelation(c echo.Context) error {
+	data, httperr := extractParams(c, "precision")
+
+	if httperr != nil {
+		return c.JSON(httperr.Code, httperr)
+	}
+
+	precision := data[0]
+
+	err := json.NewDecoder(c.Request().Body).Decode(&data)
+
+	if err != nil {
+		return c.JSON(core.JsonError.Code, core.JsonError)
+	}
+
+	programms, httperr := programms.SearchByAreaRelation(data, precision)
+
+	if httperr != nil {
+		return c.JSON(httperr.Code, httperr)
+	}
+
+	return c.JSON(http.StatusOK, programms)
 }

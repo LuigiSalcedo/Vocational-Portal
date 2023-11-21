@@ -47,3 +47,30 @@ func FetchAll() ([]*models.Programm, *core.HttpError) {
 
 	return p, nil
 }
+
+// Services to get programms by area relation
+func SearchByAreaRelation(areasId []int64, precision int64) ([]*models.Programm, *core.HttpError) {
+	pwars, err := programmsrepo.SearchByAreaRelation(areasId)
+
+	if err != nil {
+		return nil, core.InternalError
+	}
+
+	filters := make([]services.Filter[models.PWAR], 0, 1)
+
+	if precision > 0 {
+		filters = append(filters, func(p *models.PWAR) bool {
+			return p.N >= float64(precision)
+		})
+	}
+
+	pwars = services.FilterData(pwars, filters...)
+
+	programms := make([]*models.Programm, 0, len(pwars))
+
+	for _, pwar := range pwars {
+		programms = append(programms, &pwar.Programm)
+	}
+
+	return programms, nil
+}
