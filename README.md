@@ -16,11 +16,11 @@ go install github.com/pressly/goose/v3/cmd/goose@lastest
 With the database created and goose installed, create a enviroment variable (EV) named **vocaportal_db_data**. The variable's value
 must be like this:
 ```
-"user=<your postgres user> password=<your postgres password> dbname=vocadb host=localhost sslmode=disable"
+user=<your postgres user> password=<your postgres password> dbname=vocadb host=localhost sslmode=disable
 ```
 With the EV saved open your CLC and go to the project root folder (where go.mod file is located) and type the next command:
 ```
-goose -dir migrations postgres %vocaportal_db_data% up
+goose -dir migrations postgres "%vocaportal_db_data%" up
 ```
 The database should be updated.
 ### Running
