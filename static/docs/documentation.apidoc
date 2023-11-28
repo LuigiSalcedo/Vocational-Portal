@@ -1,7 +1,7 @@
 Ver documentatión de la API|/documentation|GET|N/A|N/A
-Obtener todas las universidades con parametros|/universidades[?[pais=int]&[ciudad=int]]|GET|N/A|lista {id: int, name: string, ciudad: {id: int, name:string, pais: {id: int, name:string}}}
-Obtener listado de universidades por nombre|/universidades/nombre/:name|GET|N/A|lista de {id: int, name: string, ciudad: {id: int, name:string, pais: {id: int, name:string}}}
-Obtener una universidad especificada por ID|/universidades/id/:id|GET|N/A|{id: int, name: string, ciudad: {id: int, name:string, pais: {id: int, name:string}}}
+Obtener todas las universidades con parametros|/universidades[?[pais=int]&[ciudad=int]]|GET|N/A|lista {id: int, name: string, ciudad: {id: int, name:string, pais: {id: int, name:string}}, url: string}
+Obtener listado de universidades por nombre|/universidades/nombre/:name|GET|N/A|lista de {id: int, name: string, ciudad: {id: int, name:string, pais: {id: int, name:string}, url: string}
+Obtener una universidad especificada por ID|/universidades/id/:id|GET|N/A|{id: int, name: string, ciudad: {id: int, name:string, pais: {id: int, name:string}, url: string}
 Obtener todos los paises|/paises|GET|N/A|lista {id:int, name:string}
 Obtener listado de paises por nombre|/paises/nombre/:nombre|GET|N/A|lista de {id: int, name: string}
 Obtener un país especificado por ID|/paises/id/:id|GET|N/A|{id: int, name:string}
