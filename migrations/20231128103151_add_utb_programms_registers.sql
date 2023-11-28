@@ -1,0 +1,25 @@
+-- +goose Up
+-- +goose StatementBegin
+SELECT 'up SQL query';
+INSERT INTO academic_programmes VALUES 
+(24, 'MARKETING'),
+(25, 'CIENCIA DE DATOS'),
+(26, 'PSICOLOGIA'),
+(27, 'CIENCIAS POLITICAS'),
+(28, 'NEGOCIOS INTERNACIONALES'),
+(29, 'INGENIERIA NAVAL'),
+(30, 'INGENIERIA MECATRONICA'),
+(31, 'INGENIERIA MECANICA'),
+(32, 'INGENIERIA INDUSTRIAL'),
+(33, 'INGENIERIA ELECTRONICA'),
+(34, 'INGENIERIA ELECTRICA'),
+(35, 'INGENIERIA BIOMEDICA'),
+(36, 'INGENIERIA AMBIENTAL'),
+(37, 'ARQUITECTURA');
+-- +goose StatementEnd
+
+-- +goose Down
+-- +goose StatementBegin
+SELECT 'down SQL query';
+DELETE FROM academic_programmes WHERE ID >= 24 AND ID <= 37;
+-- +goose StatementEnd
