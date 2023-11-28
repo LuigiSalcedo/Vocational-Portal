@@ -11,6 +11,7 @@ const (
 	SELECT
 	U.ID,
 	U.NAME,
+	U.URL,
 	City.ID,
 	City.NAME,
 	Country.ID,
@@ -26,6 +27,7 @@ const (
 	SELECT
 	U.ID,
 	U.NAME,
+	U.URL,
 	City.ID,
 	City.NAME,
 	Country.ID,
@@ -41,6 +43,7 @@ const (
 	SELECT
 	U.ID,
 	U.NAME,
+	U.URL,
 	City.ID,
 	City.NAME,
 	Country.ID,
