@@ -44,5 +44,9 @@ func main() {
 	e.GET("/areas", controllers.Areas.FetchAll)
 	e.GET("/areas/nombre/:name", controllers.Areas.SearchByName)
 
+	// Endpoints de preferencias
+	e.GET("/preferencias", controllers.Preferences.FetchAll)
+	e.GET("/preferencias/nombre/:name", controllers.Preferences.SearchByName)
+
 	log.Fatal(e.Start(":8088")) // Initializing server
 }
