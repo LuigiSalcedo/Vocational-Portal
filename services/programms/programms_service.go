@@ -4,6 +4,7 @@ import (
 	"strings"
 	"vocaportal/core"
 	"vocaportal/models"
+	"vocaportal/repositories/areasrepo"
 	"vocaportal/repositories/programmsrepo"
 	"vocaportal/services"
 )
@@ -73,4 +74,15 @@ func SearchByAreaRelation(areasId []int64, precision int64) ([]*models.Programm,
 	}
 
 	return programms, nil
+}
+
+// Service to get programms by prefernce
+func SearchByPreferences(preferencesIds []int64) ([]*models.Programm, *core.HttpError) {
+	areasIds, err := areasrepo.SearchByPreference(preferencesIds)
+
+	if err != nil {
+		return nil, core.InternalError
+	}
+
+	return SearchByAreaRelation(areasIds, 0)
 }
