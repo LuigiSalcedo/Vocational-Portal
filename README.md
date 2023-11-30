@@ -4,7 +4,7 @@ This respository contains the source code about a Vocational-Portal. Here You ca
 ### Dependencies
 To run vocaportal-server you have to get the next requeriments:
 - Go: [Download Go here](https://go.dev/dl/)
-- PostgreSQL: [Download PostgrsSQL here](https://www.postgresql.org/download/)
+- PostgreSQL: [Download PostgreSQL here](https://www.postgresql.org/download/)
 ### Preparing database
 Once installed go and PostgreSQL you have to create a database. In this example It will named **"vocadb"**.
 Now You have to install [goose](http://pressly.github.io/goose/) to manage the database migrations.
@@ -23,6 +23,13 @@ With the EV saved open your CLC and go to the project root folder (where go.mod 
 goose -dir migrations postgres "%vocaportal_db_data%" up
 ```
 The database should be updated.
+### Configurations
+The programm needs 3 more EVs.
+- **vocaportal_admin**: the admin name.
+- **vocaportal_password**: the admin password.
+- **vocaportal_secret**: the JWT secret.
+The EVs' values can be anything. You need the admin & password to get access to /admin and create admins users in the database. The secret is the sign of the JWT.
+ 
 ### Running
 The program is compiled on Windows 64 bits. If You are on a Windows 64 bits You can execute server.exe file. If You are on a different
 operative system You can execute It with the next command:
