@@ -38,7 +38,7 @@ const (
 	SELECT
 	P.ID,
 	P.NAME,
-	PUNCTUATION
+	SCORE
 	FROM programmes_areas as A JOIN academic_programmes as P ON P.ID = A.programm_id
 	WHERE 1 = 1
 	`
