@@ -35,6 +35,7 @@ func main() {
 	e.GET("/programas/id/:id", controllers.Programms.FetchProgramm)
 	e.GET("/programas", controllers.Programms.FetchAll)
 	e.POST("/programas/areas", controllers.Programms.SearchByAreaRelation)
+	e.POST("/programas/preferencias", controllers.Programms.SearchByPreferences)
 
 	// Endpoint de ofertas
 	e.GET("/ofertas", controllers.Offers.FetchAll)

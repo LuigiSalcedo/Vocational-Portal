@@ -83,3 +83,22 @@ func (pc programmsController) SearchByAreaRelation(c echo.Context) error {
 
 	return c.JSON(http.StatusOK, programms)
 }
+
+// Contoller: /programas/preferencias
+func (pc programmsController) SearchByPreferences(c echo.Context) error {
+	ids := make([]int64, 0, 15)
+
+	err := json.NewDecoder(c.Request().Body).Decode(&ids)
+
+	if err != nil {
+		return c.JSON(core.JsonError.Code, core.JsonError)
+	}
+
+	programms, httperr := programms.SearchByPreferences(ids)
+
+	if httperr != nil {
+		return c.JSON(httperr.Code, httperr)
+	}
+
+	return c.JSON(http.StatusOK, programms)
+}
