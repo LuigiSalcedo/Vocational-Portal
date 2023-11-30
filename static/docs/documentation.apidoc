@@ -19,3 +19,5 @@ Obtener todas las areas de estudio|/areas|GET|N/A|lista de {id: int, nombre: str
 Obtener un listado de areas de estudio por nombre|/areas/nombre/:nombre|GET|N/A|lista de {id: int, nombre: string}
 Obtener todas las preferencias|/preferencias|GET|N/A|lista de {id:int, nombre:string}
 Obtener listado de preferencias por nombre|/preferencias/nombre/:nombre|GET|N/A|lista de {id:int, nombre:string}
+Acceder al panel de admin|/admin|GET (Vía navegador)|N/A|Document HTML
+Loggearse como admin|/admins/entrar|POST|{name:string, password:string}|{jwt:string}
