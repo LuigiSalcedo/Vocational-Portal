@@ -1,10 +1,13 @@
 package main
 
 import (
+	"crypto/subtle"
 	"log"
+	"os"
 	"vocaportal/controllers"
 
 	"github.com/labstack/echo/v4"
+	"github.com/labstack/echo/v4/middleware"
 )
 
 func main() {
@@ -14,6 +17,27 @@ func main() {
 
 	// Ver documentación
 	e.GET("/documentation", controllers.Documentation.APIDoc)
+
+	g := e.Group("")
+
+	// Basic Auth para acceder a la vista de admin
+	g.Use(middleware.BasicAuth(func(user, password string, ctx echo.Context) (bool, error) {
+		if subtle.ConstantTimeCompare([]byte(user), []byte(os.Getenv("vocaportal_admin"))) != 1 {
+			return false, nil
+		}
+
+		if subtle.ConstantTimeCompare([]byte(password), []byte(os.Getenv("vocaportal_password"))) != 1 {
+			return false, nil
+		}
+
+		return true, nil
+	}))
+
+	// Cargar vista de admins
+	g.GET("/admin", controllers.Admin.LoadHTML)
+
+	// Almacenar un administrador
+	e.POST("/admins/guardar", controllers.Admin.SaveAdmin)
 
 	// Endpoints universidades
 	e.GET("/universidades/nombre/:name", controllers.Universities.SearchByName)

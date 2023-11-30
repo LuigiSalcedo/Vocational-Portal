@@ -30,6 +30,7 @@ var (
 	BadRequest = HttpResponse{http.StatusBadRequest}          // 400
 	NotFound   = HttpResponse{http.StatusNotFound}            // 404
 	Internal   = HttpResponse{http.StatusInternalServerError} // 500
+	Forbidden  = HttpResponse{http.StatusForbidden}
 )
 
 // Communs errors
@@ -57,6 +58,11 @@ var (
 	InternalError = &HttpError{
 		HttpResponse: Internal,
 		Error:        "internal server error",
+	}
+
+	ForbiddenError = &HttpError{
+		HttpResponse: Forbidden,
+		Error:        "forbidden action",
 	}
 )
 
