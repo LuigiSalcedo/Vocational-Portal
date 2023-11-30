@@ -118,16 +118,10 @@ func SearchByAreaRelation(areasIds []int64) ([]*models.PWAR, error) {
 	FROM (
 	` + subQuery.String() + ") as sq GROUP BY(ID, NAME) ORDER BY(N) DESC"
 
-	stmt, err := database.DB().Prepare(finalQuery)
+	r, err := database.DB().Query(finalQuery)
 
 	if err != nil {
 		core.LogErr(err)
-		return nil, err
-	}
-
-	r, err := repositories.DoSimpleQuery(stmt)
-
-	if err != nil {
 		return nil, err
 	}
 
