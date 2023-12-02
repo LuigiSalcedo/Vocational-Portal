@@ -13,6 +13,13 @@ import (
 func main() {
 	e := echo.New()
 
+	// Configuración de CORS
+	e.Use(middleware.CORSWithConfig(middleware.CORSConfig{
+		AllowOrigins: []string{"*"},
+		AllowHeaders: []string{echo.HeaderOrigin, echo.HeaderContentType, echo.HeaderAccept},
+		AllowMethods: []string{"GET", "POST"},
+	}))
+
 	e.Static("/", "static")
 
 	// Ver documentación

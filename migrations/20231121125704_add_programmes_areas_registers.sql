@@ -1,7 +1,7 @@
 -- +goose Up
 -- +goose StatementBegin
 SELECT 'up SQL query';
-INSERT INTO programmes_areas(programm_id, area_id, punctuation) VALUES
+INSERT INTO programmes_areas(programm_id, area_id, puntuation) VALUES
 (1, 1, 10),
 (1, 2, 10),
 (1, 3, 0),
