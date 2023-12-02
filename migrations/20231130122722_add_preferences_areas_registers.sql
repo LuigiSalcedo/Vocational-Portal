@@ -79,5 +79,5 @@ INSERT INTO preferences_areas (preference_id, area_id) VALUES
 -- +goose Down
 -- +goose StatementBegin
 SELECT 'down SQL query';
-DELETE FROM preferences_areas WHERE preference_id >= 1 and preferece_id <= 31;
+DELETE FROM preferences_areas WHERE preference_id >= 1 and preference_id <= 31;
 -- +goose StatementEnd
