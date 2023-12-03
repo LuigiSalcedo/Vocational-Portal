@@ -26,6 +26,6 @@ func (o *Offer) Extract() []any {
 // Recovery func
 func (o *Offer) Recovery(data ...any) {
 	o.DefaultData.Recovery(data[:2]...)
-	o.Programm.Recovery(data[2:4]...)
-	o.University.Recovery(data[4:]...)
+	o.Programm.Recovery(data[2:5]...)
+	o.University.Recovery(data[5:]...)
 }
