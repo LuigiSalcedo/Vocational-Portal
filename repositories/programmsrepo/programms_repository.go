@@ -121,7 +121,7 @@ func SearchByAreaRelation(areasIds []int64) ([]*models.PWAR, error) {
 	DESCRIPTION,
 	AVG(SCORE) as N
 	FROM (
-	` + subQuery.String() + ") as sq GROUP BY(ID, NAME) ORDER BY(N) DESC"
+	` + subQuery.String() + ") as sq GROUP BY(ID, NAME, DESCRIPTION) ORDER BY(N) DESC"
 
 	r, err := database.DB().Query(finalQuery)
 
