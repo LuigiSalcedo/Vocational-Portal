@@ -11,5 +11,5 @@ CREATE TABLE preferences (
 -- +goose Down
 -- +goose StatementBegin
 SELECT 'down SQL query';
-DROP TABLE prefereces;
+DROP TABLE preferences;
 -- +goose StatementEnd

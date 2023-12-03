@@ -14,7 +14,8 @@ const (
 	searchByNameSQL = `
 	SELECT
 	ID,
-	NAME
+	NAME,
+	DESCRIPTION
 	FROM academic_programmes
 	WHERE NAME LIKE $1
 	`
@@ -22,7 +23,8 @@ const (
 	fetchProgrammSQL = `
 	SELECT
 	ID,
-	NAME
+	NAME,
+	DESCRIPTION
 	FROM academic_programmes
 	WHERE ID = $1
 	`
@@ -30,7 +32,8 @@ const (
 	fetchAllSQL = `
 	SELECT
 	ID,
-	NAME
+	NAME,
+	DESCRIPTION
 	FROM academic_programmes
 	`
 
@@ -38,6 +41,7 @@ const (
 	SELECT
 	P.ID,
 	P.NAME,
+	P.DESCRIPTION,
 	SCORE
 	FROM programmes_areas as A JOIN academic_programmes as P ON P.ID = A.programm_id
 	WHERE 1 = 1

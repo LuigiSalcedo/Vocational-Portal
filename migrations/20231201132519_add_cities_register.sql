@@ -16,5 +16,5 @@ INSERT INTO cities(country_id, id, name) VALUES
 -- +goose Down
 -- +goose StatementBegin
 SELECT 'down SQL query';
-DELETE FROM cities WHERE id >= 2 AND i <= 10;
+DELETE FROM cities WHERE id >= 2 AND id <= 10;
 -- +goose StatementEnd
