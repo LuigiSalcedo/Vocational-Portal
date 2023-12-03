@@ -7,7 +7,7 @@ import (
 // Academic programm database model
 type Programm struct {
 	DefaultData
-	Description string `json:"description"`
+	Description string `json:"descripcion"`
 }
 
 // PWAR = Program With Area Relation
