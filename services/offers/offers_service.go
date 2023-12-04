@@ -58,6 +58,10 @@ func FetchAll(paramValues []int64) ([]*models.Offer, *core.HttpError) {
 		services.SortSlice(r, func(o1, o2 *models.Offer) int {
 			return strings.Compare(o1.Price, o2.Price)
 		})
+	} else {
+		services.SortSlice(r, func(o1, o2 *models.Offer) int {
+			return strings.Compare(o1.Name, o2.Name)
+		})
 	}
 
 	return r, nil

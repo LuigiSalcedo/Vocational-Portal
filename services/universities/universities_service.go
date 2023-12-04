@@ -73,5 +73,9 @@ func FetchAll(ciudadParam, paisParam string) ([]*models.University, *core.HttpEr
 		}
 	}
 
+	services.SortSlice(u, func(u1, u2 *models.University) int {
+		return strings.Compare(u1.Name, u2.Name)
+	})
+
 	return services.FilterData(u, filters...), nil
 }

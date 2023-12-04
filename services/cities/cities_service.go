@@ -52,5 +52,9 @@ func FetchAll(countryId int64) ([]*models.City, *core.HttpError) {
 		cities = citiesFiltered
 	}
 
+	services.SortSlice(cities, func(c1, c2 *models.City) int {
+		return strings.Compare(c1.Name, c2.Name)
+	})
+
 	return cities, nil
 }

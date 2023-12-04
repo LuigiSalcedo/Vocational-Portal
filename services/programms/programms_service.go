@@ -46,6 +46,10 @@ func FetchAll() ([]*models.Programm, *core.HttpError) {
 		return nil, core.InternalError
 	}
 
+	services.SortSlice(p, func(p1, p2 *models.Programm) int {
+		return strings.Compare(p1.Name, p2.Name)
+	})
+
 	return p, nil
 }
 
