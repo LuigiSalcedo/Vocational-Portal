@@ -11,6 +11,8 @@ const (
 	SELECT
 	Offer.ID,
 	Offer.NAME,
+	Offer.PRICE,
+	Offer.URL,
 	Programm.ID,
 	Programm.NAME,
 	Programm.DESCRIPTION,
