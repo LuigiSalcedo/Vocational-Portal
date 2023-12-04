@@ -8,6 +8,6 @@ ALTER TABLE academic_offers ALTER COLUMN url SET NOT NULL;
 -- +goose Down
 -- +goose StatementBegin
 SELECT 'down SQL query';
-ALTER TABLE academic_offers ALTER COLUMN price TYPE SET NULL;
-ALTER TABLE academic_offers ALTER COLUMN url SET NULL;
+ALTER TABLE academic_offers ALTER COLUMN price DROP NOT NULL;
+ALTER TABLE academic_offers ALTER COLUMN url DROP NOT NULL;
 -- +goose StatementEnd

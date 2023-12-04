@@ -129,417 +129,417 @@ WHERE id = 25;
 UPDATE academic_offers SET 
 price = '$6.611.000', 
 url = 'https://www.utb.edu.co/pregrados/marketing-y-transformacion-digital/' 
-WHERE id = 202;
+WHERE id = 26;
 
 UPDATE academic_offers SET 
 price = '$7.504.000', 
 url = 'https://www.utb.edu.co/pregrados/ciencia-de-datos/' 
-WHERE id = 203;
+WHERE id = 27;
 
 UPDATE academic_offers SET 
 price = '$6.820.000', 
 url = 'https://www.utb.edu.co/pregrados/psicologia/' 
-WHERE id = 204;
+WHERE id = 28;
 
 UPDATE academic_offers SET 
 price = '$5.993.000', 
 url = 'https://www.utb.edu.co/pregrados/derecho/' 
-WHERE id = 205;
+WHERE id = 29;
 
 UPDATE academic_offers SET 
 price = '$6.760.000', 
 url = 'https://www.utb.edu.co/pregrados/comunicacion-social/' 
-WHERE id = 206;
+WHERE id = 30;
 
 UPDATE academic_offers SET 
 price = '$5.738.000', 
 url = 'https://www.utb.edu.co/pregrados/ciencia-politica-y-relaciones-internacionales/' 
-WHERE id = 207;
+WHERE id = 31;
 
 UPDATE academic_offers SET 
 price = '$6.611.000', 
 url = 'https://www.utb.edu.co/pregrados/finanzas-y-negocios-internacionales/' 
-WHERE id = 208;
+WHERE id = 32;
 
 UPDATE academic_offers SET 
 price = '$4.309.000', 
 url = 'https://www.utb.edu.co/pregrados/contaduria-publica/' 
-WHERE id = 209;
+WHERE id = 33;
 
 UPDATE academic_offers SET 
 price = '$2.600.000', 
 url = 'https://www.utb.edu.co/pregrados/contaduria-publica-virtual/' 
-WHERE id = 210;
+WHERE id = 34;
 
 UPDATE academic_offers SET 
 price = '$6.611.000', 
 url = 'https://www.utb.edu.co/pregrados/administracion-de-empresas/' 
-WHERE id = 211;
+WHERE id = 35;
 
 UPDATE academic_offers SET 
 price = '$5.164.000', 
 url = 'https://www.utb.edu.co/pregrados/economia/' 
-WHERE id = 212;
+WHERE id = 36;
 
 UPDATE academic_offers SET 
 price = '$6.746.000', 
 url = 'https://www.utb.edu.co/pregrados/ingenieria-quimica/' 
-WHERE id = 213;
+WHERE id = 37;
 
 UPDATE academic_offers SET 
 price = '$7.160.000', 
 url = 'https://www.utb.edu.co/pregrados/ingenieria-naval/' 
-WHERE id = 214;
+WHERE id = 38;
 
 UPDATE academic_offers SET 
 price = '$7.160.000', 
 url = 'https://www.utb.edu.co/pregrados/ingenieria-mecatronica/' 
-WHERE id = 215;
+WHERE id = 39;
 
 UPDATE academic_offers SET 
 price = '$7.160.000', 
 url = 'https://www.utb.edu.co/pregrados/ingenieria-mecanica/' 
-WHERE id = 216;
+WHERE id = 40;
 
 UPDATE academic_offers SET 
 price = '$7.504.000', 
 url = 'https://www.utb.edu.co/pregrados/ingenieria-industrial/' 
-WHERE id = 217;
+WHERE id = 41;
 
 UPDATE academic_offers SET 
 price = '$6.746.000', 
 url = 'https://www.utb.edu.co/pregrados/ingenieria-electronica/' 
-WHERE id = 218;
+WHERE id = 42;
 
 UPDATE academic_offers SET 
 price = '$6.746.000', 
 url = 'https://www.utb.edu.co/pregrados/ingenieria-electrica/' 
-WHERE id = 219;
+WHERE id = 43;
 
 UPDATE academic_offers SET 
 price = '$6.011.000', 
 url = 'https://www.utb.edu.co/pregrados/ingenieria-de-sistemas-y-computacion/' 
-WHERE id = 220;
+WHERE id = 44;
 
 UPDATE academic_offers SET 
 price = '$6.746.000', 
 url = 'https://www.utb.edu.co/pregrados/ingenieria-civil/' 
-WHERE id = 221;
+WHERE id = 45;
 
 UPDATE academic_offers SET 
 price = '$6.746.000', 
 url = 'https://www.utb.edu.co/pregrados/ingenieria-biomedica/' 
-WHERE id = 222;
+WHERE id = 46;
 
 UPDATE academic_offers SET 
 price = '$6.746.000', 
 url = 'https://www.utb.edu.co/pregrados/ingenieria-ambiental/' 
-WHERE id = 223;
+WHERE id = 47;
 
 UPDATE academic_offers SET 
 price = '$6.883.000', 
 url = 'https://www.utb.edu.co/pregrados/arquitectura/' 
-WHERE id = 224;
+WHERE id = 48;
 
 UPDATE academic_offers SET 
 price = '$1.892.740', 
 url = 'https://tecnologicocomfenalco.edu.co/tecnologia-en-gestion-de-marketing' 
-WHERE id = 225;
+WHERE id = 49;
 
 UPDATE academic_offers SET 
 price = '$3.394.610', 
 url = 'https://tecnologicocomfenalco.edu.co/administracion-en-seguridad-y-salud-en-el-trabajo' 
-WHERE id = 226;
+WHERE id = 50;
 
 UPDATE academic_offers SET 
 price = '$2.312.080 ', 
 url = 'https://tecnologicocomfenalco.edu.co/ingenieria-civil' 
-WHERE id = 227;
+WHERE id = 51;
 
 UPDATE academic_offers SET 
 price = '$1.803.860 ', 
 url = 'https://tecnologicocomfenalco.edu.co/tecnologia-en-produccion-industrial' 
-WHERE id = 228;
+WHERE id = 52;
 
 UPDATE academic_offers SET 
 price = '$1.892.740 ', 
 url = 'https://tecnologicocomfenalco.edu.co/tecnologia-en-seguridad-e-higiene-ocupacional' 
-WHERE id = 229;
+WHERE id = 53;
 
 UPDATE academic_offers SET 
 price = '$1.983.640 ', 
 url = 'https://tecnologicocomfenalco.edu.co/tecnologia-en-control-de-calidad' 
-WHERE id = 230;
+WHERE id = 54;
 
 UPDATE academic_offers SET 
 price = '$1.892.740 ', 
 url = 'https://tecnologicocomfenalco.edu.co/tecnologia-en-gestion-ambiental-industrial' 
-WHERE id = 231;
+WHERE id = 55;
 
 UPDATE academic_offers SET 
 price = '$1.892.740 ', 
 url = 'https://tecnologicocomfenalco.edu.co/tecnologia-en-operacion-de-plantas-y-procesos-industriales' 
-WHERE id = 232;
+WHERE id = 56;
 
 UPDATE academic_offers SET 
 price = '$1.892.740 ', 
 url = 'https://tecnologicocomfenalco.edu.co/tecnologia-en-control-electronico-de-procesos' 
-WHERE id = 233;
+WHERE id = 57;
 
 UPDATE academic_offers SET 
 price = '$1.892.740 ', 
 url = 'https://tecnologicocomfenalco.edu.co/tecnologia-en-desarrollo-de-software' 
-WHERE id = 234;
+WHERE id = 58;
 
 UPDATE academic_offers SET 
 price = '$1.892.740 ', 
 url = 'https://tecnologicocomfenalco.edu.co/gestion-de-redes-de-computadores-y-seguridad-informatica/' 
-WHERE id = 235;
+WHERE id = 59;
 
 UPDATE academic_offers SET 
 price = '$3.394.610 ', 
 url = 'https://tecnologicocomfenalco.edu.co/ingenieria-industrial' 
-WHERE id = 236;
+WHERE id = 60;
 
 UPDATE academic_offers SET 
 price = '$2.444.110 ', 
 url = 'https://tecnologicocomfenalco.edu.co/derecho' 
-WHERE id = 237;
+WHERE id = 61;
 
 UPDATE academic_offers SET 
 price = '$3.506.720 ', 
 url = 'https://tecnologicocomfenalco.edu.co/psicologia' 
-WHERE id = 238;
+WHERE id = 62;
 
 UPDATE academic_offers SET 
 price = '$2.829.010 ', 
 url = 'https://tecnologicocomfenalco.edu.co/trabajo-social' 
-WHERE id = 239;
+WHERE id = 63;
 
 UPDATE academic_offers SET 
 price = '$1.892.740 ', 
 url = 'https://tecnologicocomfenalco.edu.co/tecnologia-en-gestion-turistica-y-hotelera' 
-WHERE id = 240;
+WHERE id = 64;
 
 UPDATE academic_offers SET 
 price = '$1.892.740 ', 
 url = 'https://tecnologicocomfenalco.edu.co/tecnologia-en-gestion-logistica' 
-WHERE id = 241;
+WHERE id = 65;
 
 UPDATE academic_offers SET 
 price = '$1.892.740 ', 
 url = 'https://tecnologicocomfenalco.edu.co/tecnologia-en-gestion-de-negocios-internacionales' 
-WHERE id = 242;
+WHERE id = 66;
 
 UPDATE academic_offers SET 
 price = '$1.892.740 ', 
 url = 'https://tecnologicocomfenalco.edu.co/tecnologia-en-gestion-financiera' 
-WHERE id = 243;
+WHERE id = 67;
 
 UPDATE academic_offers SET 
 price = '$1.892.740 ', 
 url = 'https://tecnologicocomfenalco.edu.co/tecnologia-en-gestion-contable/' 
-WHERE id = 244;
+WHERE id = 68;
 
 UPDATE academic_offers SET 
 price = '$2.714.880 ', 
 url = 'https://tecnologicocomfenalco.edu.co/contaduria-publica' 
-WHERE id = 245;
+WHERE id = 69;
 
 UPDATE academic_offers SET 
 price = '$3.394.610 ', 
 url = 'https://tecnologicocomfenalco.edu.co/plan-de-estudio-ingenieria-de-procesos' 
-WHERE id = 246;
+WHERE id = 70;
 
 UPDATE academic_offers SET 
 price = '$3.394.610 ', 
 url = 'https://tecnologicocomfenalco.edu.co/plan-de-estudio-ingenieria-de-sistemas' 
-WHERE id = 247;
+WHERE id = 71;
 
 UPDATE academic_offers SET 
 price = '$3.394.610 ', 
 url = 'https://tecnologicocomfenalco.edu.co/plan-de-estudio-administracion-de-empresas' 
-WHERE id = 248;
+WHERE id = 72;
 
 UPDATE academic_offers SET 
 price = '$3.394.610 ', 
 url = 'https://tecnologicocomfenalco.edu.co/plan-de-estudio-ingenieria-electronica' 
-WHERE id = 249;
+WHERE id = 73;
 
 UPDATE academic_offers SET 
 price = '$3.394.610 ', 
 url = 'https://tecnologicocomfenalco.edu.co/plan-de-estudio-ingenieria-ambiental' 
-WHERE id = 250;
+WHERE id = 74;
 
 UPDATE academic_offers SET 
 price = '$1.160.000', 
 url = 'https://umayor.edu.co/files/MALLA_T%C3%A9cnico_Profesional_en_Operaci%C3%B3n_de_Procesos_Aduaneros.pdf' 
-WHERE id = 251;
+WHERE id = 75;
 
 UPDATE academic_offers SET 
 price = '$1.450.000', 
 url = 'https://umayor.edu.co/files/MALLA_Tecnolog%C3%ADa_en_Gesti%C3%B3n_Log%C3%ADstica_Portuaria_y_Aduanera.pdf' 
-WHERE id = 252;
+WHERE id = 76;
 
 UPDATE academic_offers SET 
 price = '$1.740.000', 
 url = 'https://umayor.edu.co/files/MALLA_ADMINISTRACI%C3%93N_DE_COMERCIO_EXTERIOR.pdf' 
-WHERE id = 253;
+WHERE id = 77;
 
 UPDATE academic_offers SET 
 price = '$1.450.000', 
 url = 'https://umayor.edu.co/files/MALLA_TECNOLOGIA_EN_TURISMO_E_IDIOMAS.pdf' 
-WHERE id = 254;
+WHERE id = 78;
 
 UPDATE academic_offers SET 
 price = '$1.160.000', 
 url = 'https://umayor.edu.co/files/MALLA_TECNICO_PRODESIONAL_OPERACION_TURISTICA.pdf' 
-WHERE id = 255;
+WHERE id = 79;
 
 UPDATE academic_offers SET 
 price = '$1.450.000', 
 url = 'https://umayor.edu.co/wp-content/uploads/2021/08/MALLA-DE-ASIGNATURAS-Tecnologia-en-Gestion-Turistica.pdf' 
-WHERE id = 256;
+WHERE id = 80;
 
 UPDATE academic_offers SET 
 price = '$1.740.000', 
 url = 'https://umayor.edu.co/files/MALLA_ADMINISTRACION_TURISTICA.pdf' 
-WHERE id = 257;
+WHERE id = 81;
 
 UPDATE academic_offers SET 
 price = '$1.450.000', 
 url = 'https://umayor.edu.co/files/MALLA_DE_ASIGNATURAS_Tecnolog%C3%ADa_en_Gesti%C3%B3n_Empresarial_Umayor.pdf' 
-WHERE id = 258;
+WHERE id = 82;
 
 UPDATE academic_offers SET 
 price = '$1.160.000', 
 url = 'https://umayor.edu.co/files/MALLA_DE_ASIGNATURAS_T%C3%A9cnico_Profesional_en_Procesos_Administrativos_umayor.pdf' 
-WHERE id = 259;
+WHERE id = 83;
 
 UPDATE academic_offers SET 
 price = '$1.740.000', 
 url = 'https://umayor.edu.co/files/MALLA_DE_ASIGNATURAS_ADMINISTRACI%C3%93N_DE_EMPRESAS_umayor.pdf' 
-WHERE id = 260;
+WHERE id = 84;
 
 UPDATE academic_offers SET 
 price = '$1.450.000', 
 url = 'https://umayor.edu.co/files/MALLA-DE-ASIGNATURAS-Tecnologia-en-Delineante-de-Arquitectura-e-Ingenieria.pdf' 
-WHERE id = 261;
+WHERE id = 85;
 
 UPDATE academic_offers SET 
 price = '$1.450.000', 
 url = 'https://umayor.edu.co/files/MALLA_T%C3%A9cnico_Profesional_en_Mantenimiento_Electromec%C3%A1nico.pdf' 
-WHERE id = 262;
+WHERE id = 86;
 
 UPDATE academic_offers SET 
 price = '$', 
 url = 'https://www.unisinucartagena.edu.co/tecnologo-en-mantenimiento-electrico-snies-110957/' 
-WHERE id = 263;
+WHERE id = 87;
 
 UPDATE academic_offers SET 
 price = '$', 
 url = 'https://www.unisinucartagena.edu.co/tecnologo-en-mantenimiento-electronico-snies-110958/' 
-WHERE id = 264;
+WHERE id = 88;
 
 UPDATE academic_offers SET 
 price = '$', 
 url = 'https://www.unisinucartagena.edu.co/tecnologo-en-mantenimiento-mecanico-snies-110959/' 
-WHERE id = 265;
+WHERE id = 89;
 
 UPDATE academic_offers SET 
 price = '$', 
 url = 'https://www.unisinucartagena.edu.co/profesional-en-gastronomia-snies-109295/' 
-WHERE id = 266;
+WHERE id = 90;
 
 UPDATE academic_offers SET 
 price = '$', 
 url = 'https://www.unisinucartagena.edu.co/ingenieria-civil-snies-109096/' 
-WHERE id = 267;
+WHERE id = 91;
 
 UPDATE academic_offers SET 
 price = '$', 
 url = 'https://www.unisinucartagena.edu.co/ingenieria-agroindustrial-snies-108459/' 
-WHERE id = 268;
+WHERE id = 92;
 
 UPDATE academic_offers SET 
 price = '$', 
 url = 'https://www.unisinucartagena.edu.co/programa-de-psicologia/' 
-WHERE id = 269;
+WHERE id = 93;
 
 UPDATE academic_offers SET 
 price = '$', 
 url = 'https://www.unisinucartagena.edu.co/programa-de-derecho/' 
-WHERE id = 270;
+WHERE id = 94;
 
 UPDATE academic_offers SET 
 price = '$', 
 url = 'https://www.unisinucartagena.edu.co/ingenieria-de-sistemas/' 
-WHERE id = 271;
+WHERE id = 95;
 
 UPDATE academic_offers SET 
 price = '$', 
 url = 'https://www.unisinucartagena.edu.co/programa-de-optometria/' 
-WHERE id = 272;
+WHERE id = 96;
 
 UPDATE academic_offers SET 
 price = '$', 
 url = 'https://www.unisinucartagena.edu.co/programa-de-odontologia/' 
-WHERE id = 273;
+WHERE id = 97;
 
 UPDATE academic_offers SET 
 price = '$', 
 url = 'https://www.unisinucartagena.edu.co/programa-de-nutricion-y-dietetica/' 
-WHERE id = 274;
+WHERE id = 98;
 
 UPDATE academic_offers SET 
 price = '$', 
 url = 'https://www.unisinucartagena.edu.co/programa-de-enfermeria/' 
-WHERE id = 275;
+WHERE id = 99;
 
 UPDATE academic_offers SET 
 price = '$', 
 url = 'https://www.unisinucartagena.edu.co/programa-de-administracion-de-negocios-internacionales/' 
-WHERE id = 276;
+WHERE id = 100;
 
 UPDATE academic_offers SET 
 price = '$', 
 url = 'https://www.unisinucartagena.edu.co/administracion-de-empresas-turisiticas-y-hotelera-snies-110336/' 
-WHERE id = 277;
+WHERE id = 101;
 
 UPDATE academic_offers SET 
 price = '$', 
 url = 'https://www.unisinucartagena.edu.co/tecnologia-en-produccion-y-creaccion-de-moda-snies-111049/' 
-WHERE id = 278;
+WHERE id = 102;
 
 UPDATE academic_offers SET 
 price = '$', 
 url = 'https://www.unisinucartagena.edu.co/programa-contaduria-publica/' 
-WHERE id = 279;
+WHERE id = 103;
 
 UPDATE academic_offers SET 
 price = '$', 
 url = 'https://www.unisinucartagena.edu.co/programa-de-biologia-marina/' 
-WHERE id = 280;
+WHERE id = 104;
 
 UPDATE academic_offers SET 
 price = '$', 
 url = 'https://www.unisinucartagena.edu.co/ingenieria-industrial/' 
-WHERE id = 281;
+WHERE id = 105;
 
 UPDATE academic_offers SET 
 price = '$', 
 url = 'https://unicartagena.edu.co/estudia-con-nosotros/facultad-medicina' 
-WHERE id = 282;
+WHERE id = 106;
 
 UPDATE academic_offers SET 
 price = '$', 
 url = 'https://www.unisinucartagena.edu.co/programa-de-medicina/' 
-WHERE id = 283;
+WHERE id = 107;
 
 UPDATE academic_offers SET 
 price = '$0',
 url = 'https://admisiones.unal.edu.co/pregrado/'
-WHERE id >= 284 and id <= 377;
+WHERE id >= 108 and id <= 201;
 -- +goose StatementEnd
 
 -- +goose Down
