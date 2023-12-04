@@ -15,7 +15,7 @@ var Offers = offersController{}
 
 // Controller: /ofertas
 func (oc offersController) FetchAll(c echo.Context) error {
-	paramValues, httperr := extractParams(c, "programa", "universidad", "ciudad", "pais")
+	paramValues, httperr := extractParams(c, "programa", "universidad", "ciudad", "pais", "precio")
 
 	if httperr != nil {
 		return c.JSON(httperr.Code, httperr)

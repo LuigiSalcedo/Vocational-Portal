@@ -1,6 +1,7 @@
 package offers
 
 import (
+	"strconv"
 	"strings"
 	"vocaportal/core"
 	"vocaportal/models"
@@ -30,8 +31,36 @@ func FetchAll(paramValues []int64) ([]*models.Offer, *core.HttpError) {
 	// Filtro por id de pais
 	filters = services.CreateAndAddFilter(filters, func(o *models.Offer) any { return o.University.City.Country.Id }, paramValues[3])
 
+	if paramValues[4] != -1 {
+		filters = append(filters, func(o *models.Offer) bool {
+			if len(o.Price) <= 1 {
+				return false
+			}
+
+			priceStr := strings.Trim(o.Price, "$")
+			priceStr = strings.Replace(priceStr, ".", "", -1)
+
+			price, err := strconv.Atoi(priceStr)
+
+			if err != nil {
+				core.LogErr(err)
+				return false
+			}
+
+			return int64(price) <= paramValues[4]
+		})
+	}
+
 	// Filtrar información
-	return services.FilterData(offers, filters...), nil
+	r := services.FilterData(offers, filters...)
+
+	if paramValues[4] != 1 {
+		services.SortSlice(r, func(o1, o2 *models.Offer) int {
+			return strings.Compare(o1.Price, o2.Price)
+		})
+	}
+
+	return r, nil
 }
 
 // Service to search offers by name
