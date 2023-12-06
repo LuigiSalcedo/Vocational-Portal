@@ -64,6 +64,16 @@ func FetchAll(paramValues []int64) ([]*models.Offer, *core.HttpError) {
 		})
 	}
 
+	for _, offer := range offers {
+		if offer.Price == "$0" {
+			offer.Price = "Universidad pública"
+		}
+
+		if offer.Price == "$" {
+			offer.Price = "$-"
+		}
+	}
+
 	return r, nil
 }
 
@@ -78,6 +88,16 @@ func SearchByName(name string) ([]*models.Offer, *core.HttpError) {
 	}
 
 	services.SortWithPrefix(offers, name)
+
+	for _, offer := range offers {
+		if offer.Price == "$0" {
+			offer.Price = "Universidad pública"
+		}
+
+		if offer.Price == "$" {
+			offer.Price = "$-"
+		}
+	}
 
 	return offers, nil
 }
